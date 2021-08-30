@@ -22,8 +22,8 @@ print("The following file names will be renamed:")
 for i in rename_array:
     songNames = rename_array[i]
     #print(str(songNames[0]))
-    print(songNames[0] + ' -> ' + songNames[1]+'.mp3')
-    #os.rename(os.path.join(pathToMusic, songNames[0]), os.path.join(pathToMusic, songNames[1]+'.mp3'))
+    if (songNames[0] != songNames[1]+'.mp3'):
+        print(songNames[0] + ' -> ' + songNames[1]+'.mp3')
 
 user_input = input("Do you want to rename all files? (y/n)")
 
@@ -33,4 +33,5 @@ if ('n'==user_input):
 
 for i in rename_array:
     songNames = rename_array[i]
-    os.rename(os.path.join(pathToMusic, songNames[0]), os.path.join(pathToMusic, songNames[1]+'.mp3'))
+    if (songNames[0] != songNames[1]+'.mp3'):
+        os.rename(os.path.join(pathToMusic, songNames[0]), os.path.join(pathToMusic, songNames[1]+'.mp3'))
